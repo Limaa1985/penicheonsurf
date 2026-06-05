@@ -13,6 +13,7 @@ public/
   uploads/            ← gallery photos & media (CMS media library writes here)
   admin/index.html    ← the CMS UI  → lives at /admin
   admin/config.yml    ← content model (fields, backend, media)
+
 ```
 
 ## How the content wiring works
