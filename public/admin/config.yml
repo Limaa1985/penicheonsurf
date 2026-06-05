@@ -1,0 +1,183 @@
+# Sveltia CMS — content model for Peniche On Surf
+# Pedro edits the site content here; saving creates a commit on GitHub,
+# Cloudflare Pages rebuilds automatically.
+
+backend:
+  name: github
+  repo: OWNER/REPO            # <-- set to your GitHub repo, e.g. greyform/peniche-on-surf
+  branch: main
+  base_url: https://YOUR-WORKER.workers.dev   # <-- your sveltia-cms-auth Worker URL
+
+# Where uploaded photos go (gallery images, etc.)
+media_folder: "public/uploads"
+public_folder: "/uploads"
+
+# Show a live preview link in the editor
+site_url: https://penicheonsurf.com
+
+collections:
+  - name: content
+    label: "Website content"
+    files:
+      - name: en
+        label: "Website (English)"
+        file: "src/data/en.json"
+        fields:
+          - { name: "eyebrow", label: "Hero · eyebrow line", widget: "string" }
+          - { name: "h1", label: "Hero · headline (part 1)", widget: "string" }
+          - { name: "h1em", label: "Hero · headline (highlighted)", widget: "string" }
+          - { name: "hero_p", label: "Hero · paragraph", widget: "text" }
+          - { name: "btn_enquire", label: "Hero · button (enquire)", widget: "string" }
+          - { name: "btn_see", label: "Hero · button (see lessons)", widget: "string" }
+          - { name: "badge1", label: "Hero · badge 1", widget: "string" }
+          - { name: "badge2", label: "Hero · badge 2", widget: "string" }
+          - { name: "badge3", label: "Hero · badge 3", widget: "string" }
+          - { name: "nav_lessons", label: "Nav · Lessons", widget: "string" }
+          - { name: "nav_prices", label: "Nav · Prices", widget: "string" }
+          - { name: "nav_about", label: "Nav · About", widget: "string" }
+          - { name: "nav_reviews", label: "Nav · Reviews", widget: "string" }
+          - { name: "nav_stay", label: "Nav · Stay", widget: "string" }
+          - { name: "nav_contact", label: "Nav · Contact", widget: "string" }
+          - { name: "lessons_eyebrow", label: "Lessons · eyebrow", widget: "string" }
+          - { name: "lessons_h2", label: "Lessons · heading", widget: "string" }
+          - { name: "lesson1_h3", label: "Lesson 1 · title", widget: "string" }
+          - { name: "lesson1_meta", label: "Lesson 1 · meta", widget: "string" }
+          - { name: "lesson1_p", label: "Lesson 1 · description", widget: "text" }
+          - { name: "lesson2_h3", label: "Lesson 2 · title", widget: "string" }
+          - { name: "lesson2_meta", label: "Lesson 2 · meta", widget: "string" }
+          - { name: "lesson2_p", label: "Lesson 2 · description", widget: "text" }
+          - { name: "lesson3_h3", label: "Lesson 3 · title", widget: "string" }
+          - { name: "lesson3_meta", label: "Lesson 3 · meta", widget: "string" }
+          - { name: "lesson3_p", label: "Lesson 3 · description", widget: "text" }
+          - { name: "lesson4_h3", label: "Lesson 4 · title", widget: "string" }
+          - { name: "lesson4_meta", label: "Lesson 4 · meta", widget: "string" }
+          - { name: "lesson4_small", label: "Lesson 4 · small note", widget: "string" }
+          - { name: "packs_cta_h", label: "Packs CTA · heading", widget: "string" }
+          - { name: "packs_cta_p", label: "Packs CTA · text", widget: "text" }
+          - { name: "packs_cta_btn", label: "Packs CTA · button", widget: "string" }
+          - { name: "lesson4_p", label: "Lesson 4 · description", widget: "text" }
+          - { name: "prices_eyebrow", label: "Prices · eyebrow", widget: "string" }
+          - { name: "prices_h2", label: "Prices · heading", widget: "string" }
+          - { name: "prices_p", label: "Prices · intro", widget: "text" }
+          - { name: "prices_h3_1", label: "Prices · subhead 1", widget: "string" }
+          - { name: "prices_h3_2", label: "Prices · subhead 2", widget: "string" }
+          - { name: "prices_training_p", label: "Prices · training text", widget: "text" }
+          - { name: "prices_h3_3", label: "Prices · subhead 3", widget: "string" }
+          - { name: "th_equip", label: "Rental table · Equipment", widget: "string" }
+          - { name: "th_half", label: "Rental table · Half day", widget: "string" }
+          - { name: "td_board_suit", label: "Rental · Board & wetsuit", widget: "string" }
+          - { name: "td_board", label: "Rental · Board", widget: "string" }
+          - { name: "td_suit", label: "Rental · Wetsuit", widget: "string" }
+          - { name: "good_to_know", label: "Prices · good to know", widget: "text" }
+          - { name: "damage", label: "Prices · damage note", widget: "text" }
+          - { name: "booking_h3", label: "Booking · heading", widget: "string" }
+          - { name: "booking_p", label: "Booking · text", widget: "text" }
+          - { name: "booking_btn", label: "Booking · button", widget: "string" }
+          - { name: "about_eyebrow", label: "About · eyebrow", widget: "string" }
+          - { name: "about_h2", label: "About · heading", widget: "string" }
+          - { name: "about_p1", label: "About · paragraph 1", widget: "text" }
+          - { name: "about_p2", label: "About · paragraph 2", widget: "text" }
+          - { name: "about_creds", label: "About · qualifications title", widget: "string" }
+          - { name: "about_cred1", label: "About · qualification 1", widget: "string" }
+          - { name: "about_cred2", label: "About · qualification 2", widget: "string" }
+          - { name: "about_cred3", label: "About · qualification 3", widget: "string" }
+          - { name: "reviews_eyebrow", label: "Reviews · eyebrow", widget: "string" }
+          - { name: "reviews_h2", label: "Reviews · heading", widget: "string" }
+          - { name: "reviews_rated", label: "Reviews · rated line", widget: "string" }
+          - { name: "reviews_google", label: "Reviews · google line", widget: "string" }
+          - { name: "reviews_btn", label: "Reviews · button", widget: "string" }
+          - { name: "stay_eyebrow", label: "Stay · eyebrow", widget: "string" }
+          - { name: "stay_h2", label: "Stay · heading", widget: "string" }
+          - { name: "stay_p", label: "Stay · text", widget: "text" }
+          - { name: "stay_btn", label: "Stay · button", widget: "string" }
+          - { name: "footer_tagline", label: "Footer · tagline", widget: "string" }
+          - { name: "price_group", label: "Price · Group lesson", widget: "string" }
+          - { name: "price_group_unit", label: "Price unit · Group", widget: "string" }
+          - { name: "price_private", label: "Price · Private lesson", widget: "string" }
+          - { name: "price_private_unit", label: "Price unit · Private", widget: "string" }
+          - { name: "price_guiding", label: "Price · Surf guiding", widget: "string" }
+          - { name: "price_guiding_unit", label: "Price unit · Guiding", widget: "string" }
+          - { name: "price_rental", label: "Price · Rental", widget: "string" }
+          - { name: "price_rental_unit", label: "Price unit · Rental", widget: "string" }
+          - { name: "most_popular", label: "Badge · Most popular", widget: "string" }
+      - name: pt
+        label: "Website (Português)"
+        file: "src/data/pt.json"
+        fields:
+          - { name: "eyebrow", label: "Hero · eyebrow line", widget: "string" }
+          - { name: "h1", label: "Hero · headline (part 1)", widget: "string" }
+          - { name: "h1em", label: "Hero · headline (highlighted)", widget: "string" }
+          - { name: "hero_p", label: "Hero · paragraph", widget: "text" }
+          - { name: "btn_enquire", label: "Hero · button (enquire)", widget: "string" }
+          - { name: "btn_see", label: "Hero · button (see lessons)", widget: "string" }
+          - { name: "badge1", label: "Hero · badge 1", widget: "string" }
+          - { name: "badge2", label: "Hero · badge 2", widget: "string" }
+          - { name: "badge3", label: "Hero · badge 3", widget: "string" }
+          - { name: "nav_lessons", label: "Nav · Lessons", widget: "string" }
+          - { name: "nav_prices", label: "Nav · Prices", widget: "string" }
+          - { name: "nav_about", label: "Nav · About", widget: "string" }
+          - { name: "nav_reviews", label: "Nav · Reviews", widget: "string" }
+          - { name: "nav_stay", label: "Nav · Stay", widget: "string" }
+          - { name: "nav_contact", label: "Nav · Contact", widget: "string" }
+          - { name: "lessons_eyebrow", label: "Lessons · eyebrow", widget: "string" }
+          - { name: "lessons_h2", label: "Lessons · heading", widget: "string" }
+          - { name: "lesson1_h3", label: "Lesson 1 · title", widget: "string" }
+          - { name: "lesson1_meta", label: "Lesson 1 · meta", widget: "string" }
+          - { name: "lesson1_p", label: "Lesson 1 · description", widget: "text" }
+          - { name: "lesson2_h3", label: "Lesson 2 · title", widget: "string" }
+          - { name: "lesson2_meta", label: "Lesson 2 · meta", widget: "string" }
+          - { name: "lesson2_p", label: "Lesson 2 · description", widget: "text" }
+          - { name: "lesson3_h3", label: "Lesson 3 · title", widget: "string" }
+          - { name: "lesson3_meta", label: "Lesson 3 · meta", widget: "string" }
+          - { name: "lesson3_p", label: "Lesson 3 · description", widget: "text" }
+          - { name: "lesson4_h3", label: "Lesson 4 · title", widget: "string" }
+          - { name: "lesson4_meta", label: "Lesson 4 · meta", widget: "string" }
+          - { name: "lesson4_small", label: "Lesson 4 · small note", widget: "string" }
+          - { name: "packs_cta_h", label: "Packs CTA · heading", widget: "string" }
+          - { name: "packs_cta_p", label: "Packs CTA · text", widget: "text" }
+          - { name: "packs_cta_btn", label: "Packs CTA · button", widget: "string" }
+          - { name: "lesson4_p", label: "Lesson 4 · description", widget: "text" }
+          - { name: "prices_eyebrow", label: "Prices · eyebrow", widget: "string" }
+          - { name: "prices_h2", label: "Prices · heading", widget: "string" }
+          - { name: "prices_p", label: "Prices · intro", widget: "text" }
+          - { name: "prices_h3_1", label: "Prices · subhead 1", widget: "string" }
+          - { name: "prices_h3_2", label: "Prices · subhead 2", widget: "string" }
+          - { name: "prices_training_p", label: "Prices · training text", widget: "text" }
+          - { name: "prices_h3_3", label: "Prices · subhead 3", widget: "string" }
+          - { name: "th_equip", label: "Rental table · Equipment", widget: "string" }
+          - { name: "th_half", label: "Rental table · Half day", widget: "string" }
+          - { name: "td_board_suit", label: "Rental · Board & wetsuit", widget: "string" }
+          - { name: "td_board", label: "Rental · Board", widget: "string" }
+          - { name: "td_suit", label: "Rental · Wetsuit", widget: "string" }
+          - { name: "good_to_know", label: "Prices · good to know", widget: "text" }
+          - { name: "damage", label: "Prices · damage note", widget: "text" }
+          - { name: "booking_h3", label: "Booking · heading", widget: "string" }
+          - { name: "booking_p", label: "Booking · text", widget: "text" }
+          - { name: "booking_btn", label: "Booking · button", widget: "string" }
+          - { name: "about_eyebrow", label: "About · eyebrow", widget: "string" }
+          - { name: "about_h2", label: "About · heading", widget: "string" }
+          - { name: "about_p1", label: "About · paragraph 1", widget: "text" }
+          - { name: "about_p2", label: "About · paragraph 2", widget: "text" }
+          - { name: "about_creds", label: "About · qualifications title", widget: "string" }
+          - { name: "about_cred1", label: "About · qualification 1", widget: "string" }
+          - { name: "about_cred2", label: "About · qualification 2", widget: "string" }
+          - { name: "about_cred3", label: "About · qualification 3", widget: "string" }
+          - { name: "reviews_eyebrow", label: "Reviews · eyebrow", widget: "string" }
+          - { name: "reviews_h2", label: "Reviews · heading", widget: "string" }
+          - { name: "reviews_rated", label: "Reviews · rated line", widget: "string" }
+          - { name: "reviews_google", label: "Reviews · google line", widget: "string" }
+          - { name: "reviews_btn", label: "Reviews · button", widget: "string" }
+          - { name: "stay_eyebrow", label: "Stay · eyebrow", widget: "string" }
+          - { name: "stay_h2", label: "Stay · heading", widget: "string" }
+          - { name: "stay_p", label: "Stay · text", widget: "text" }
+          - { name: "stay_btn", label: "Stay · button", widget: "string" }
+          - { name: "footer_tagline", label: "Footer · tagline", widget: "string" }
+          - { name: "price_group", label: "Price · Group lesson", widget: "string" }
+          - { name: "price_group_unit", label: "Price unit · Group", widget: "string" }
+          - { name: "price_private", label: "Price · Private lesson", widget: "string" }
+          - { name: "price_private_unit", label: "Price unit · Private", widget: "string" }
+          - { name: "price_guiding", label: "Price · Surf guiding", widget: "string" }
+          - { name: "price_guiding_unit", label: "Price unit · Guiding", widget: "string" }
+          - { name: "price_rental", label: "Price · Rental", widget: "string" }
+          - { name: "price_rental_unit", label: "Price unit · Rental", widget: "string" }
+          - { name: "most_popular", label: "Badge · Most popular", widget: "string" }
