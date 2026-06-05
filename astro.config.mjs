@@ -1,6 +1,7 @@
 import { defineConfig } from 'astro/config';
 
-// Static output — Cloudflare Pages serves the built /dist folder directly.
+// Reine Statik — Cloudflare Pages liefert den gebauten /dist-Ordner direkt aus.
 export default defineConfig({
-  site: 'https://penicheonsurf.com',
+  site: 'https://www.penicheonsurf.com',
+  output: 'static',
 });
