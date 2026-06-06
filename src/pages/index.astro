@@ -560,7 +560,7 @@ window.setLang = function setLang(l) {
   document.querySelectorAll('#langSwitch button').forEach(b => {
     b.classList.toggle('on', b.textContent.toLowerCase() === l);
   });
-  try { localStorage.setItem('lang',''); } catch(e){}
+  try { localStorage.setItem('lang', l); } catch(e){}
   // Seitentitel + Meta-Description je Sprache
   document.title = l === 'pt'
     ? 'Peniche On Surf — Escola de Surf & Aluguer · Peniche / Supertubos'
@@ -572,6 +572,9 @@ window.setLang = function setLang(l) {
       : 'Learn to surf at Supertubos & Baleal with Peniche On Surf. Personal coaching with local instructor Pedro, all gear included, all levels welcome. Lessons, training, board & wetsuit rentals.');
   }
 }
+
+// Apply CMS content on load (and restore the visitor's chosen language)
+setLang((function(){ try { return localStorage.getItem('lang') || 'en'; } catch(e){ return 'en'; } })());
 </script>
 
 <script>
