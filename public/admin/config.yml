@@ -4,9 +4,9 @@
 
 backend:
   name: github
-  repo: OWNER/REPO            # <-- set to your GitHub repo, e.g. greyform/peniche-on-surf
+  repo: Limaa1985/penicheonsurf
   branch: main
-  base_url: https://YOUR-WORKER.workers.dev   # <-- your sveltia-cms-auth Worker URL
+  base_url: https://sveltia-cms-auth.pedro-lima17.workers.dev
 
 # Where uploaded photos go (gallery images, etc.)
 media_folder: "public/uploads"
